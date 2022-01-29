@@ -11,6 +11,7 @@ const reload = browserSync.reload;
 const scss_dir = './protected/scss/';
 const js_dir = './protected/js/';
 const assets_dir = './assets';
+const src_dir = './protected';
 
 
 function appCss() {
@@ -43,7 +44,7 @@ gulp.task('serve', function () {
         }
     });
 
-    gulp.watch("*.html").on("change", reload);
+    gulp.watch([src_dir, 'index.html']).on("change", reload);
 });
 
 exports.css = gulp.parallel(appCss, /*pageCss*/);
