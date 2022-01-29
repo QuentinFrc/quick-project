@@ -44,7 +44,7 @@ gulp.task('serve', function () {
         }
     });
 
-    gulp.watch(src_dir).on("change", reload);
+    gulp.watch([src_dir, 'index.html']).on("change", reload);
 });
 
 exports.css = gulp.parallel(appCss, /*pageCss*/);
